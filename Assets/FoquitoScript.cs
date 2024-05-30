@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FoquitoScript : MonoBehaviour
 {
-    [SerializeField] GameObject[] colors;
+    public GameObject[] colors;
     public int currentLightIndex =-1;
 
     void Start()
@@ -50,6 +50,7 @@ public class FoquitoScript : MonoBehaviour
 
     public void ActivateRepeating(float t)
     {
+        CancelInvoke();
         InvokeRepeating(nameof(ActivateNextLight),0,t);
     }
 }
